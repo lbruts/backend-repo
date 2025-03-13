@@ -1,0 +1,26 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: base-service
+    
+  datasource:
+    url: jdbc:mysql://localhost:3306/C?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: true
+
+mybatis-plus:
+  mapper-locations: classpath*:mapper/**/*.xml
+  type-aliases-package: com.example.baseservice.model.entity
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+# JWT配置
+jwt:
+  secret: CKAtyr/57QtZ0R9BHQa+B2cZdiVQ7275R7MSwcf7n9UFwJdydMLGsTRzXZFt7Bbnxxe5MDDdksV6y4IDLngGHA==
+  expiration: 86400000  # 24小时 
